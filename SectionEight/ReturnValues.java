@@ -1,6 +1,6 @@
 public class ReturnValues {
        public static void main(String[] args) {
-        double measure1 =  measureRectangle(-5, 2.2, "area");
+        double measure1 =  measureRectangle(4.3, 2.2, "area");
         double measure2 =  measureRectangle(1.3, 6.2, "perimeter");
         System.out.println(measure1);    
 
@@ -24,9 +24,9 @@ public class ReturnValues {
          }
     }
 
-    public static void stringPrinter(double length, double width, double area, String option){
+    public static void stringPrinter(double length, double width, double measure, String option){
         System.out.println("The " + option + " of a rectangle with length " + length + " and width " + width
-        + " is equal to " + area + "\n");
+        + " is equal to " + measure + "\n");
 
     }
 
