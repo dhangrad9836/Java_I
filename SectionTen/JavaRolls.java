@@ -33,7 +33,7 @@ public class JavaRolls {
         System.out.println("You rolled a " + diceRoll);
 
         if(diceRoll == 6){
-          System.out.println("End if game");
+          System.out.println("End of game");
           break;
         } else if (diceRoll == 4){
           System.out.println("Zero points. Keep rolling");
