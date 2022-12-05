@@ -36,10 +36,14 @@ public class Blackjack {
          String dealerCard1 = cardString(cardOne);
          String dealerCard2 = cardString(cardTwo);
          String faceDownCard = faceDown();
-        System.out.println("The dealer shows \n" + dealerCard1 + "\nand has a card facing down \n" + faceDownCard);
-        System.out.println("\nThe dealer's total is hidden");
         //       – Print: The dealer shows \n" + <first card> + "\nand has a card facing down \n" + <facedown card>
         //       – Print: \nThe dealer's total is hidden
+        System.out.println("The dealer shows \n" + dealerCard1 + "\nand has a card facing down \n" + faceDownCard);
+        System.out.println("\nThe dealer's total is hidden");
+   
+        //test hitOrStay function
+        String userMove = hitOrStay();
+        System.out.println("The user wants to " + userMove);
 
        
         //Task 8 – Keep asking the player to hit or stay (while loop).
@@ -50,12 +54,12 @@ public class Blackjack {
         //             - print: your new total is <total>
 
         //       2. Once the player stays, break the loop. 
-
+        
         
         //For tasks 9 to 13, see the article: Blackjack Part II. 
          scan.close();
 
-    }
+    }//end main function
 
     /** Task 1 – make a function that returns a random number between 1 and 13
      * Function name – drawRandomCard
@@ -210,5 +214,17 @@ public class Blackjack {
      *      Please write 'hit' or 'stay'
      *   3. Returns the user's option 
      */
+    public static String hitOrStay(){       
+        System.out.println("Do you want to hit or stay?");
+        String userMove = scan.nextLine();
+        while(!(userMove.equalsIgnoreCase("hit") || userMove.equalsIgnoreCase("stay"))){
+            System.out.println("Please write 'hit or 'stay'");
+            //pick up the usermove
+             userMove = scan.nextLine();
+        }
+        return userMove;
+
     }
+
+    } //end BlackJack class
 
