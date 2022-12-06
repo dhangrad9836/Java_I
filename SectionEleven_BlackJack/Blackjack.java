@@ -36,6 +36,8 @@ public class Blackjack {
         //dealer cards get random number
          int dealerCardOne = drawRandomCard();
         int dealerCardTwo = drawRandomCard();
+        //keep dealerSum
+        int dealerSum = dealerCardOne + dealerCardTwo;
 
         // String dealerCard1 = cardString(dealerCardOne);
         //  String dealerCard2 = cardString(dealerCardTwo);
@@ -62,7 +64,7 @@ public class Blackjack {
         } //this runs when the player hits
         int newCard = drawRandomCard();
         playerSum += newCard;
-        System.out.println("/nYou get a /n " + cardString(newCard));
+        System.out.println("\nYou get a \n " + cardString(newCard));
         System.out.println("Your new total is " + playerSum);
         
         if(playerSum > 21){
@@ -74,11 +76,29 @@ public class Blackjack {
 
        //task 10 Dealers turn
        System.out.println("/nDealer't turn");
-       System.out.println("/nThe dealer's cards are /n" + dealerCard1 + "/n " 
-       + dealerCard2);
+       System.out.println("\nThe dealer's cards are \n" + dealerCard1 + "\n and \n" + dealerCard2);
+       System.out.println("Dealer's total " + dealerSum);
 
+       
+       //dealer must keep hitting until total is 17 then dealer will stop or bust
+       //while loop to keep going until 17 or bust
+       while(dealerSum < 17){
+           int newDealerCard = drawRandomCard();
 
-
+           dealerSum += newDealerCard;
+           System.out.println("Dealer gets a " + cardString(newDealerCard));
+           System.out.println("Dealers total " + dealerSum);
+        }//end while loop
+        
+        if(dealerSum > 21){
+         System.out.println("Bust Dealer Loses.");
+        }
+        
+        if(playerSum > dealerSum){
+            System.out.println("Player Wins");
+        }else{
+            System.out.println("Dealer Wins.");
+        }
         //Task 8 – Keep asking the player to hit or stay (while loop).
         //       1. Every time the player hits
         //             – draw a new card.
